@@ -3,7 +3,7 @@ var router = express.Router();
 var request = require('request');
 
 router.get('/', function(req, res, next) {
-  console.log(req.protocol + '://' + req.get('host'));
+  console.log(req.protocol + '://' + req.get('host') + '/');
   request('http://localhost:3000/autos', (err, response, body) => {
     res.render('web_autos', { data: JSON.parse(body) });
   });
